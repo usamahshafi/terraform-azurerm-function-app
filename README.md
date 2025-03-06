@@ -1,3 +1,9 @@
+# Azure Function App Module
+
+This Terraform module provisions an **Azure Function App** along with its supporting infrastructure, including a **Resource Group**, **App Service Plan**, and **Storage Account**. The module supports both **Linux** and **Windows** Function Apps, based on the selected `os_type` input.
+
+---
+
 ## Requirements
 
 | Name | Version |
@@ -5,15 +11,21 @@
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.9.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.8.0 |
 
+---
+
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.8.0 |
 
+---
+
 ## Modules
 
-No modules.
+No external sub-modules are used in this module.
+
+---
 
 ## Resources
 
@@ -25,6 +37,8 @@ No modules.
 | [azurerm_storage_account.azurerm-storage-account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
 | [azurerm_windows_function_app.azurerm-function-app](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_function_app) | resource |
 
+---
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -35,6 +49,8 @@ No modules.
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | App Service Plan SKU | `string` | `"B2"` | no |
 | <a name="input_storage_account_replication_type"></a> [storage\_account\_replication\_type](#input\_storage\_account\_replication\_type) | Replication type for the Storage Account (LRS, GRS) | `string` | `"LRS"` | no |
 | <a name="input_storage_account_tier"></a> [storage\_account\_tier](#input\_storage\_account\_tier) | The tier of the Storage Account (Standard or Premium) | `string` | `"Standard"` | no |
+
+---
 
 ## Outputs
 
@@ -49,3 +65,18 @@ No modules.
 | <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | The name of the Resource Group. |
 | <a name="output_storage_account_id"></a> [storage\_account\_id](#output\_storage\_account\_id) | The ID of the Storage Account. |
 | <a name="output_storage_account_name"></a> [storage\_account\_name](#output\_storage\_account\_name) | The name of the Storage Account. |
+
+---
+
+## Summary
+
+This module automates the provisioning of a complete **Azure Function App environment**, including:
+
+- **Resource Group** to logically group all resources.
+- **App Service Plan** to define the hosting environment.
+- **Storage Account** to store Function code and logs.
+- **Function App** itself, either on **Linux** or **Windows**, depending on your input.
+
+It supports flexible configuration for **performance tiers**, **replication settings**, and **naming conventions**, making it suitable for a variety of Function App deployments.
+
+---
