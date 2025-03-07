@@ -24,7 +24,7 @@ output "app_service_plan_name" {
   description = "The name of the App Service Plan."
   value       = azurerm_service_plan.azurerm-app-service-plan.name
 }
-
+ 
 output "app_service_plan_id" {
   description = "The ID of the App Service Plan."
   value       = azurerm_service_plan.azurerm-app-service-plan.id
