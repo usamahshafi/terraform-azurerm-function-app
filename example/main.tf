@@ -27,7 +27,7 @@ module "function_app" {
   source = "../"
 
   location                          = "East US"
-  prefix                            = "example_module" 
+  prefix                            = "example" 
   storage_account_tier              = "Standard"
   storage_account_replication_type  = "LRS"
   os_type                           = "Linux" # Change to "Windows" if needed
